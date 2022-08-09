@@ -9,7 +9,7 @@ INSERT INTO Direccion (calle, carrera, infoAdicional, idCoordenada) VALUES ('Cl 
 
 INSERT INTO Persona VALUES (123456, 'Alfredo Ramirez', 45, 1, 'Alfredo@gmail.com');
 
-INSERT INTO Tarjeta(codigoTarjeta, tipoTarjeta) VALUES ('ABCDE', 'DEBITO');
+INSERT INTO Tarjeta(codigoTarjeta, tipoTarjeta) VALUES (encriptar(12345), 'DEBITO');
 
 INSERT INTO Usuario VALUES (123456, 31643424, 1,'dirección imagen');
 
@@ -22,7 +22,7 @@ INSERT INTO Direccion (calle, carrera, infoAdicional, idCoordenada) VALUES ('Cl 
 
 INSERT INTO Persona VALUES (98765, 'Sara Nieves', 24, 2, 'sara@gmail.com');
 
-INSERT INTO Tarjeta(codigoTarjeta, tipoTarjeta) VALUES ('CDEFE', 'CRÉDITO');
+INSERT INTO Tarjeta(codigoTarjeta, tipoTarjeta) VALUES (encriptar(32123), 'CRÉDITO');
 
 INSERT INTO Trabajador VALUES (98765, 3214567, 'dirección foto perfil', 'dirección documento', 1.5, true);
 
