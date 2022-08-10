@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Mande UI</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+
+<body style="background: linear-gradient(5deg, rgb(0,103,224), rgb(0,163,255));">
+    <h1 style="color: var(--bs-white);margin-left: 20px;margin-top: 20px;">Registrarse como Cliente</h1>
+    <div class="container bg-white" style="padding-top: 10px;padding-bottom: 40px;margin-right: 12px;margin-left: 12px;padding-left: 6px;padding-right: 6px;">
+        <div class="row">
+            <div class="col-10 col-sm-10 col-md-10 offset-1 offset-sm-1 offset-md-1 text-start align-content-md-center">
+                <form method="post">
+                    <div class="form-group mb-3"><label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><strong>Nombres</strong><br></label><input class="form-control" type="text" id="nombre" placeholder="Ingrese su nombre" style="margin-bottom: 20px;" onchange="changePassword();"></div>
+                    <div class="form-group mb-3"><label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><strong>Apellido</strong><br></label><input class="form-control" type="text" id="apellido" placeholder="Ingrese su apellido" style="margin-bottom: 20px;" onchange="changePassword();"></div>
+                    <div class="form-group mb-3"><label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><strong>Contraseña</strong><br></label><input class="form-control" type="password" id="password" placeholder="Ingrese su contraseña" style="margin-bottom: 20px;" onchange="changePassword();"></div>
+                    <div class="form-group mb-3"><label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><strong>Dirección</strong><br></label><input class="form-control" type="text" id="password" placeholder="Ingrese su dirección" style="margin-bottom: 20px;" onchange="changePassword();"></div>
+                    <div><label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><strong>Cargar recibo de servicios públicos:</strong><br></label><input class="form-control" type="file"></div>
+                    <div class="form-group mb-3"><label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><strong>Celular</strong><br></label><input class="form-control" type="tel" id="celular" placeholder="Ingrese su número de celular" style="margin-bottom: 20px;" onchange="changePassword();"></div>
+                    <div class="form-group mb-3"><label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><strong>Correo Electrónico</strong><br></label><input class="form-control" type="email" id="email" placeholder="Ingrese su dirección de email" style="margin-bottom: 20px;" onchange="changePassword();"></div>
+                    <div class="row">
+                        <div class="col-md-6" style="margin-top: 20px;"><a class="btn btn-secondary d-block d-lg-flex justify-content-lg-center w-100" role="button" href="inicio.html" style="background: var(--bs-blue);">Cancelar</a></div>
+                        <div class="col-md-6" style="margin-top: 20px;"><a class="btn btn-primary d-block d-lg-flex justify-content-lg-center w-100" role="button" id="submitButton" href="registroCliente2.html" style="background: var(--bs-blue);">Continuar</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>
