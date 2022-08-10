@@ -1,5 +1,6 @@
 \c mande_db
 
+--Agregando datos a las tablas a modo de ejemplo.
 
 --CREANDO USUARIO
 

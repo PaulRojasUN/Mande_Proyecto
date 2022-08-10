@@ -1,7 +1,3 @@
--- Database: mande_db
-
--- DROP DATABASE mande_db;
-
 CREATE DATABASE mande_db
     WITH 
     OWNER = postgres
@@ -14,11 +10,28 @@ CREATE DATABASE mande_db
 
 \c mande_db
 
+--CREACIÓN DE LAS TABLAS 
 
-CREATE TABLE Coordenadas (idCoordenada SERIAL PRIMARY KEY, coorX INT,coorY INT);
+--Almacena coordenadas en dos dimensiones.
+CREATE TABLE Coordenadas 
+(
+    idCoordenada SERIAL PRIMARY KEY,
+    coorX INT,
+    coorY INT
+);
 
-CREATE TABLE Direccion (idDireccion SERIAL PRIMARY KEY,calle VARCHAR(64),carrera VARCHAR(64),infoAdicional VARCHAR(64),idCoordenada INT,CONSTRAINT fk_direccion_coordenadas FOREIGN KEY (idCoordenada) REFERENCES Coordenadas (idCoordenada));
+--Almacena información sobre las dirección.
+CREATE TABLE Direccion 
+(
+    idDireccion SERIAL PRIMARY KEY,
+    calle VARCHAR(64),
+    carrera VARCHAR(64),
+    infoAdicional VARCHAR(64),
+    idCoordenada INT,
+    CONSTRAINT fk_direccion_coordenadas FOREIGN KEY (idCoordenada) REFERENCES Coordenadas (idCoordenada)
+);
 
+--Almacena los datos básicos de las personas que utilicen la aplicación, ya sea como usuario o como trabajador.
 CREATE TABLE Persona 
 (
     numIdentificacion INT PRIMARY KEY,
@@ -29,6 +42,8 @@ CREATE TABLE Persona
     CONSTRAINT fk_persona_direccion FOREIGN KEY (idDireccion) REFERENCES Direccion (idDireccion)
 );
 
+--Almancena la información de las tarjetas utilizadas como medio de pago de los usuarios. El atributo codigoTarjeta representa
+--un numero que es encriptado en una cadena de caracteres por una función.
 CREATE TABLE Tarjeta
 (
     idTarjeta SERIAL PRIMARY KEY,
@@ -36,6 +51,7 @@ CREATE TABLE Tarjeta
     tipoTarjeta VARCHAR(32)
 );
 
+--Representa los usuarios que utilizan la aplicación para contratar algún trabajador para diligenciar un servicio.
 CREATE TABLE Usuario 
 (
     numIdentificacion INT PRIMARY KEY,
@@ -46,16 +62,20 @@ CREATE TABLE Usuario
     CONSTRAINT fk_usuario_persona FOREIGN KEY (numIdentificacion) REFERENCES Persona (numIdentificacion)
 );
 
+--Representa la información de los pagaos realizados por los usuarios.
 CREATE TABLE Pago 
 (
     idPago INT,
     numIdentificacion INT,
     medioDePago VARCHAR(32),
     montoAPagar FLOAT,
+    fecha VARCHAR(32),
   	PRIMARY KEY (idPago, numIdentificacion),
     CONSTRAINT fk_pago_usuario FOREIGN KEY (numIdentificacion) REFERENCES Usuario(numIdentificacion)
 );
 
+
+--Representa la información de los trabajadores que prestan los servicios a los usuarios.
 CREATE TABLE Trabajador 
 (
     numIdentificacion INT PRIMARY KEY,
@@ -67,7 +87,7 @@ CREATE TABLE Trabajador
   	CONSTRAINT fk_trabajador_persona FOREIGN KEY (numIdentificacion) REFERENCES Persona (numIdentificacion)
 );
 
-
+--Representa la información relacionada con las formas de pagar.
 CREATE TABLE precioServicio
 (
     idPrecio SERIAL PRIMARY KEY,
@@ -75,6 +95,8 @@ CREATE TABLE precioServicio
     cantHoras FLOAT
 );
 
+--Contiene la información de los servicios que son ofrecidos en la plataforma por los trabajadores. Notar que están conectados con 
+--los trabajadores y los precios, permitiendo que dos trabajadores puedan ofrecer servicios iguales bajo distintas condiciones.
 CREATE TABLE Servicio 
 (
     idServicio SERIAL PRIMARY KEY,
@@ -86,6 +108,7 @@ CREATE TABLE Servicio
     CONSTRAINT fk_servicio_trabajador FOREIGN KEY (numIdentificacion) REFERENCES Trabajador (numIdentificacion)
 );
 
+--Esta tabla contiene la información de las contraseñas que tiene las entidades "Persona", ya sea un usuario o un trabajador.
 CREATE TABLE PasswordPersona
 (
     numIdentificacion INT PRIMARY KEY,
@@ -93,6 +116,11 @@ CREATE TABLE PasswordPersona
   	CONSTRAINT fk_passwordPersona_persona FOREIGN KEY (numIdentificacion) REFERENCES Persona (numIdentificacion)
 );
 
+
+--CREACION DE FUNCIONES
+
+--Esta función recibe un número entero y transforma cada cifra a su equivalente posición en el abecedario, representando un proceso de
+--encriptado,
 CREATE OR REPLACE FUNCTION encriptar(INT) RETURNS VARCHAR(128) AS $$
 DECLARE
 cant INT;
@@ -121,6 +149,8 @@ BEGIN
 END
 $$ LANGUAGE plpgsql;
 
+--Esta función revierte el proceso hecho por la función encriptar(INT), recibiendo una cadena de carácteres y con base a la posición
+--del carácter en el abecedario, lo convierte en un número entero.
 CREATE OR REPLACE FUNCTION desencriptar(VARCHAR(128)) RETURNS INT AS $$
 DECLARE
 cant INT;
