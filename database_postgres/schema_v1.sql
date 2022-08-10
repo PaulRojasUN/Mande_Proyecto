@@ -20,7 +20,7 @@ CREATE TABLE Coordenadas
     coorY INT
 );
 
---Almacena información sobre las dirección.
+--Almacena información sobre las direcciones.
 CREATE TABLE Direccion 
 (
     idDireccion SERIAL PRIMARY KEY,
@@ -176,5 +176,19 @@ BEGIN
     	res:= CONCAT(res, auxRes);
    	END LOOP;
    RETURN CAST(res AS INT);
+END
+$$ LANGUAGE plpgsql;
+
+--Esta función toma como parámetros dos coordenas de dos dimensiones (x1, y1, x2, y2) y calcula la distancia que hay entre ellas, 
+--teniendo en cuenta que cada una mide 0.5 (kilométros). Esta función es utilizada en la aplicación para estimar de manera aproximada la 
+--distancia (en kilométros) entre las ubicaciones de dos personas.
+CREATE OR REPLACE FUNCTION calcularDistancia(INT, INT, INT, INT) RETURNS FLOAT AS $$
+DECLARE
+	distX FLOAT;
+	distY FLOAT;
+BEGIN
+	distX := 0.5*ABS($3 - $1);
+	distY := 0.5*ABS($4 - $2);
+	RETURN distX + distY;
 END
 $$ LANGUAGE plpgsql;
