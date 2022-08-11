@@ -30,7 +30,7 @@ html(lang='en', style='background: var(--bs-gray-200);')
                   .mb-3
                     input.form-control(type='password', name='password', placeholder='Contraseña', required='')
                   .mb-3
-                    a.btn.btn-primary.d-block.w-100(role='button', href='mainCliente', style='background: var(--bs-blue);') INICIAR SESI&Oacute;N
-                    a.btn.btn-primary.d-block.w-100(role='button', href='inicio', style='margin-top: 20px;background: var(--bs-blue);') VOLVER
+                    button.btn.btn-primary(type="submit", name="boton", href="inicio", value="iniciar") INICIAR SESI&Oacute;N
+                    button.btn.btn-secondary(name="boton", href="registroCliente2",value="volver") VOLVER
     script(src='assets/bootstrap/js/bootstrap.min.js')
     script(src='assets/js/script.min.js')

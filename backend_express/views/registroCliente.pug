@@ -16,27 +16,27 @@ html(lang='en', style='height: 100%;')
     .container.bg-white(style='padding-top: 10px;padding-bottom: 40px;margin-right: 12px;margin-left: 12px;padding-left: 6px;padding-right: 6px;')
       .row
         .col-10.col-sm-10.col-md-10.offset-1.offset-sm-1.offset-md-1.text-start.align-content-md-center
-          form(method='post')
+          form(role='form' method='post' action='http://localhost:3000/registroCliente')
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong Nombres
                 br
-              input#nombre.form-control(type='text', placeholder='Ingrese su nombre', style='margin-bottom: 20px;', onchange='changePassword();')
+              input#nombre.form-control(type='text', placeholder='Ingrese su nombre', style='margin-bottom: 20px;', onchange='changePassword();', name = 'nombre')
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong Apellido
                 br
-              input#apellido.form-control(type='text', placeholder='Ingrese su apellido', style='margin-bottom: 20px;', onchange='changePassword();')
+              input#apellido.form-control(type='text', placeholder='Ingrese su apellido', style='margin-bottom: 20px;', onchange='changePassword();',name = 'apellido')
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong Contrase&ntilde;a
                 br
-              input#password.form-control(type='password', placeholder='Ingrese su contraseña', style='margin-bottom: 20px;', onchange='changePassword();')
+              input#password.form-control(type='password', placeholder='Ingrese su contraseña', style='margin-bottom: 20px;', onchange='changePassword();',name = 'password')
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong Direcci&oacute;n
                 br
-              input#password.form-control(type='text', placeholder='Ingrese su dirección', style='margin-bottom: 20px;', onchange='changePassword();')
+              input#direccion.form-control(type='text', placeholder='Ingrese su dirección', style='margin-bottom: 20px;', onchange='changePassword();',name = 'direccion')
             div
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong Cargar recibo de servicios p&uacute;blicos:
@@ -46,16 +46,16 @@ html(lang='en', style='height: 100%;')
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong Celular
                 br
-              input#celular.form-control(type='tel', placeholder='Ingrese su número de celular', style='margin-bottom: 20px;', onchange='changePassword();')
+              input#celular.form-control(type='tel', placeholder='Ingrese su número de celular', style='margin-bottom: 20px;', onchange='changePassword();',name = 'celular')
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong Correo Electr&oacute;nico
                 br
-              input#email.form-control(type='email', placeholder='Ingrese su dirección de email', style='margin-bottom: 20px;', onchange='changePassword();')
+              input#correoE.form-control(type='email', placeholder='Ingrese su dirección de email', style='margin-bottom: 20px;', onchange='changePassword();',name = 'correoE')
             .row
               .col-md-6(style='margin-top: 20px;')
-                a.btn.btn-secondary.d-block.d-lg-flex.justify-content-lg-center.w-100(role='button', href='inicio', style='background: var(--bs-blue);') Cancelar
+              button.btn.btn-secondary(name="boton", href="inicio", value="cancelar") Cancelar
               .col-md-6(style='margin-top: 20px;')
-                a#submitButton.btn.btn-primary.d-block.d-lg-flex.justify-content-lg-center.w-100(role='button', href='registroCliente2', style='background: var(--bs-blue);') Continuar
+              button.btn.btn-primary(type="submit", name="boton", href="registroCliente2",value="continuar") Continuar
     script(src='assets/bootstrap/js/bootstrap.min.js')
     script(src='assets/js/script.min.js')

@@ -15,30 +15,34 @@ html(lang='en', style='height: 100%;')
     .container.bg-white(style='padding-top: 10px;padding-bottom: 40px;margin-right: 12px;margin-left: 12px;padding-left: 6px;padding-right: 6px;')
       .row
         .col-10.col-sm-10.col-md-10.offset-1.offset-sm-1.offset-md-1.text-start.align-content-md-center
-          form(method='post')
+          form(role='form' method='post' action='http://localhost:3000/registroCliente2')
             h1(style='color: var(--bs-blue);margin-left: 20px;margin-top: 20px;') Seleccione su&nbsp; m&eacute;todo de pago
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;color: #505E6C;')
                 strong Tarjeta de
               .form-check
-                input.form-check-input(type='radio')
+                input.form-check-input(type='radio', name='radioB', value="Crédito")
                 label.form-check-label(for='formCheck-3') Cr&eacute;dito
               .form-check
-                input.form-check-input(type='radio')
+                input.form-check-input(type='radio', name='radioB', value="Débito")
                 label.form-check-label(for='formCheck-1') D&eacute;bito
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
+                strong Celular
+              input#celular.form-control(type='number', style='margin-bottom: 20px;', name = 'celular', value=cel disabled)
+            .form-group.mb-3
+              label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong N&uacute;mero de Tarjeta
-              input#cardNumber.form-control(type='number', style='margin-bottom: 20px;', placeholder='Ingrese el número de su tarjeta')
+              input#numero.form-control(type='number', style='margin-bottom: 20px;', placeholder='Ingrese el número de su tarjeta', name = 'numero')
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong C&oacute;digo de Seguridad
                 br
-              input#cvv.form-control(type='text', placeholder='Ingrese el código de seguridad en la tarjeta', style='margin-bottom: 20px;', onchange='changePassword();')
+              input#codigo.form-control(type='text', placeholder='Ingrese el código de seguridad en la tarjeta', style='margin-bottom: 20px;', onchange='changePassword();', name = 'codigo')
             .row
               .col-md-6(style='margin-top: 20px;')
-                a.btn.btn-secondary.d-block.d-lg-flex.justify-content-lg-center.w-100(role='button', href='registroCliente', style='background: var(--bs-blue);') Atras
+                button.btn.btn-secondary(name="boton", href="inicio", value="atras") Atras
               .col-md-6(style='margin-top: 20px;')
-                a#submitButton.btn.btn-primary.d-block.d-lg-flex.justify-content-lg-center.w-100(role='button', href='loginCliente', style='background: var(--bs-blue);') Registrarse
+                button.btn.btn-primary(type="submit", name="boton", href="registroCliente2",value="registro") Registrarse
     script(src='assets/bootstrap/js/bootstrap.min.js')
     script(src='assets/js/script.min.js')

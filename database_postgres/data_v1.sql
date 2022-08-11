@@ -4,6 +4,7 @@
 
 --CREANDO USUARIO
 
+/*
 INSERT INTO Coordenadas (coorX, coorY) VALUES (16, 13);
 
 INSERT INTO Direccion (calle, carrera, infoAdicional, idCoordenada) VALUES ('Cl 9', 'Cr 20', 'Segundo piso', 1);
@@ -32,3 +33,6 @@ INSERT INTO precioServicio(valor, cantHoras) VALUES (30000, 1);
 INSERT INTO Servicio(nombreServicio, tipo, idPrecio, numIdentificacion) VALUES ('Paseadora de mascotas', 'mascotas', 1, 98765);
 
 INSERT INTO PasswordPersona VALUES (98765, 'contraseña2');
+
+*/
+

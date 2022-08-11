@@ -74,11 +74,11 @@ router.get('/:id', function (req, res, next) {
  * !Antes de crearlo debería verificar si ya existe.
  */
 router.post('/', function (req, res, next) {
+  console.log("Hola, que tal");
   connect(function (err, client, done) {
     if (err) {
       return console.error('error fetching client from pool', err);
     }
-
     //use the client for executing the query
     client.query(`INSERT INTO  usuario(nombre_usuario, password) VALUES ('${req.body.nombre_usuario}', '${req.body.password}');`, function (err, result) {
       //call `done(err)` to release the client back to the pool (or destroy it if there is an error)
