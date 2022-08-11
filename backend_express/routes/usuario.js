@@ -6,17 +6,15 @@ var router = express.Router();
 const connect = require('./db_pool_connect');
 const { application } = require('express');
 
+/*
 function logger(req, res, next){
   console.log(`Request received: ${req.protocol}://${req.get('host')}${req.originalUrl}`);
   next();
 }
 
-function getNumTelefono(data, idNumber)
-{
-  data[0]
-}
-
 router.use(logger);
+*/
+
 
 /**
  * Listar todos los usuarios

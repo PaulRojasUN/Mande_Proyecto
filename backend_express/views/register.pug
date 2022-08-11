@@ -1,0 +1,27 @@
+doctype html
+html(lang='en', style='height: 100%;')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+    title Mande UI
+    link(rel='stylesheet', href='assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Anaheim&display=swap')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lora')
+    link(rel='stylesheet', href='assets/fonts/font-awesome.min.css')
+    link(rel='stylesheet', href='assets/fonts/ionicons.min.css')
+    link(rel='stylesheet', href='assets/css/styles.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')
+  body(style='background: linear-gradient(5deg, rgb(0,103,224), rgb(0,163,255));')
+    .container
+      .row
+        .col-md-12(style='margin-top: 100px;')
+          h1.text-center(style='color: var(--bs-white);') Registrarse Como...
+      .row
+        .col-md-6.text-center(style='margin-top: 100px;')
+          a.btn.btn-primary.border.rounded-circle(role='button', data-bss-hover-animate='pulse', href='registroCliente', style='width: 200px;height: 200px;padding-top: 82px;background: var(--bs-white);color: var(--bs-blue);') CLIENTE
+        .col-md-6.text-center(data-bss-hover-animate='pulse', style='margin-top: 100px;')
+          a.btn.btn-primary.border.rounded-circle(role='button', data-bss-hover-animate='pulse', href='registroSocio.html', style='width: 200px;height: 200px;padding-top: 82px;background: var(--bs-white);color: var(--bs-blue);') SOCIO
+    .container.text-center
+      a.btn.btn-primary(role='button', style='background: var(--bs-white);color: var(--bs-blue);', href='inicio') Volver
+    script(src='assets/bootstrap/js/bootstrap.min.js')
+    script(src='assets/js/script.min.js')
