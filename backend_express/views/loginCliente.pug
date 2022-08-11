@@ -1,0 +1,36 @@
+doctype html
+html(lang='en', style='background: var(--bs-gray-200);')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+    title Mande UI
+    link(rel='stylesheet', href='assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Anaheim&display=swap')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lora')
+    link(rel='stylesheet', href='assets/fonts/font-awesome.min.css')
+    link(rel='stylesheet', href='assets/fonts/ionicons.min.css')
+    link(rel='stylesheet', href='assets/css/styles.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')
+  body(style='background: var(--bs-gray-200);height: 1000px;')
+    section.position-relative.py-4.py-xl-5(style='background: linear-gradient(5deg, rgb(0,103,224), rgb(0,163,255));height: 100%;')
+      .container
+        .row.mb-5
+          .col-md-8.col-xl-6.text-center.mx-auto
+            h2(style='color: var(--bs-white);') INICIAR SESI&Oacute;N
+        .row.d-flex.justify-content-center
+          .col-md-6.col-xl-4
+            .card.mb-5
+              .card-body.d-flex.flex-column.align-items-center(style='opacity: 1;')
+                .bs-icon-xl.bs-icon-circle.bs-icon-primary.bs-icon.my-4
+                  svg.bi.bi-person(xmlns='http://www.w3.org/2000/svg', width='1em', height='1em', fill='currentColor', viewBox='0 0 16 16')
+                    path(d='M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z')
+                form.text-center(method='post')
+                  .mb-3
+                    input.form-control(type='tel', name='numTelefono', placeholder='Celular', inputmode='tel', required='')
+                  .mb-3
+                    input.form-control(type='password', name='password', placeholder='Contraseña', required='')
+                  .mb-3
+                    a.btn.btn-primary.d-block.w-100(role='button', href='mainCliente', style='background: var(--bs-blue);') INICIAR SESI&Oacute;N
+                    a.btn.btn-primary.d-block.w-100(role='button', href='inicio', style='margin-top: 20px;background: var(--bs-blue);') VOLVER
+    script(src='assets/bootstrap/js/bootstrap.min.js')
+    script(src='assets/js/script.min.js')

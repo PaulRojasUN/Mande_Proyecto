@@ -1,0 +1,34 @@
+doctype html
+html(lang='en', style='height: 100%;')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+    title Mande UI
+    link(rel='stylesheet', href='assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Anaheim&display=swap')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lora')
+    link(rel='stylesheet', href='assets/fonts/font-awesome.min.css')
+    link(rel='stylesheet', href='assets/fonts/ionicons.min.css')
+    link(rel='stylesheet', href='assets/css/styles.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')
+  body(style='background: linear-gradient(5deg, rgb(0,103,224), rgb(0,163,255));')
+    section.clean-hero
+      div(style='height: 100%;background-position: center;background-size: cover;background-repeat: no-repeat;')
+        h1(style='color: var(--bs-white);text-align: left;margin: 30px 30px;') Ajustes
+    .container.bg-white(style='padding: 39px 5px;padding-top: 40px;padding-bottom: 40px;margin-right: 12px;margin-left: 12px;padding-left: 6px;padding-right: 6px;')
+      .row
+        .col-10.col-sm-10.col-md-10.offset-1.offset-sm-1.offset-md-1.text-start.align-content-md-center
+          form(method='post')
+            .form-group.mb-3
+              a.btn.btn-primary(role='button', style='width: 250px;background: var(--bs-blue);', href='cambioPassword') Cambiar Contrase&ntilde;a
+            .form-group.mb-3
+              a.btn.btn-primary(role='button', style='width: 250px;background: var(--bs-blue);', href='cambioDireccion') Cambiar Direcci&oacute;n
+            .form-group.mb-3
+              a.btn.btn-primary(role='button', style='width: 250px;background: var(--bs-blue);', href='cambioMedioPago') Cambiar Medio de Pago
+            .row
+              .col-md-6(style='margin-top: 20px;')
+                a.btn.btn-primary(role='button', style='color: var(--bs-blue);background: var(--bs-white);', href='mainCliente')
+                  i.icon.ion-arrow-return-left(style='margin-right: 10px;')
+                  | Volver
+    script(src='assets/bootstrap/js/bootstrap.min.js')
+    script(src='assets/js/script.min.js')

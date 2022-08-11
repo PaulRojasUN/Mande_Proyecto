@@ -12,16 +12,11 @@ html(lang='en', style='height: 100%;')
     link(rel='stylesheet', href='assets/css/styles.min.css')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')
   body(style='background: linear-gradient(5deg, rgb(0,103,224), rgb(0,163,255));')
+    .container(style='margin-top: 12px;')
+      p(style='color: var(--bs-white);') No se encuentra disponible actualmente...
     .container
-      .row
-        .col-md-12(style='margin-top: 100px;')
-          h1.text-center(style='color: var(--bs-white);') Registrarse Como...
-      .row
-        .col-md-6.text-center(style='margin-top: 100px;')
-          a.btn.btn-primary.border.rounded-circle(role='button', data-bss-hover-animate='pulse', href='registroCliente', style='width: 200px;height: 200px;padding-top: 82px;background: var(--bs-white);color: var(--bs-blue);') CLIENTE
-        .col-md-6.text-center(data-bss-hover-animate='pulse', style='margin-top: 100px;')
-          a.btn.btn-primary.border.rounded-circle(role='button', data-bss-hover-animate='pulse', href='registroSocio', style='width: 200px;height: 200px;padding-top: 82px;background: var(--bs-white);color: var(--bs-blue);') SOCIO
-    .container.text-center
-      a.btn.btn-primary(role='button', style='background: var(--bs-white);color: var(--bs-blue);', href='inicio') Volver
+      a.btn.btn-primary(role='button', style='color: var(--bs-blue);background: var(--bs-white);', href='mainCliente')
+        i.icon.ion-arrow-return-left(style='margin-right: 10px;')
+        | Volver
     script(src='assets/bootstrap/js/bootstrap.min.js')
     script(src='assets/js/script.min.js')

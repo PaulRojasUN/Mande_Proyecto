@@ -1,0 +1,44 @@
+doctype html
+html(lang='en', style='height: 100%;')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+    title Mande UI
+    link(rel='stylesheet', href='assets/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Anaheim&display=swap')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lora')
+    link(rel='stylesheet', href='assets/fonts/font-awesome.min.css')
+    link(rel='stylesheet', href='assets/fonts/ionicons.min.css')
+    link(rel='stylesheet', href='assets/css/styles.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')
+  body(style='background: linear-gradient(5deg, rgb(0,103,224), rgb(0,163,255));')
+    .container.bg-white(style='padding-top: 10px;padding-bottom: 40px;margin-right: 12px;margin-left: 12px;padding-left: 6px;padding-right: 6px;')
+      .row
+        .col-10.col-sm-10.col-md-10.offset-1.offset-sm-1.offset-md-1.text-start.align-content-md-center
+          form(method='post')
+            h1(style='color: var(--bs-blue);margin-left: 20px;margin-top: 20px;') Seleccione su&nbsp; m&eacute;todo de pago
+            .form-group.mb-3
+              label.form-label(style='margin-bottom: 10px;color: #505E6C;')
+                strong Tarjeta de
+              .form-check
+                input.form-check-input(type='radio')
+                label.form-check-label(for='formCheck-3') Cr&eacute;dito
+              .form-check
+                input.form-check-input(type='radio')
+                label.form-check-label(for='formCheck-1') D&eacute;bito
+            .form-group.mb-3
+              label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
+                strong N&uacute;mero de Tarjeta
+              input#cardNumber.form-control(type='number', style='margin-bottom: 20px;', placeholder='Ingrese el número de su tarjeta')
+            .form-group.mb-3
+              label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
+                strong C&oacute;digo de Seguridad
+                br
+              input#cvv.form-control(type='text', placeholder='Ingrese el código de seguridad en la tarjeta', style='margin-bottom: 20px;', onchange='changePassword();')
+            .row
+              .col-md-6(style='margin-top: 20px;')
+                a.btn.btn-secondary.d-block.d-lg-flex.justify-content-lg-center.w-100(role='button', href='registroCliente', style='background: var(--bs-blue);') Atras
+              .col-md-6(style='margin-top: 20px;')
+                a#submitButton.btn.btn-primary.d-block.d-lg-flex.justify-content-lg-center.w-100(role='button', href='loginCliente', style='background: var(--bs-blue);') Registrarse
+    script(src='assets/bootstrap/js/bootstrap.min.js')
+    script(src='assets/js/script.min.js')

@@ -8,7 +8,7 @@ const { application } = require('express');
 
 router.get('/', function (req, res, next)
 {
-    res.render('politica', { title: 'Express' });
+    res.render('cambioLabores', { title: 'Express' });
 });
 
 module.exports = router;

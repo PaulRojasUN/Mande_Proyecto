@@ -12,31 +12,28 @@ const usuarioRouter = require('./routes/usuario');
 const personaRouter = require('./routes/persona');
 const realizarQuery = require('./routes/ejecutarQuery');
 //PARA EL PROYECTO
-/*
+
 const ajustesRouter = require('./routes/ajustes');
 const ajustesSocioRouter = require('./routes/ajustesSocio');
 const ayudaRouter = require('./routes/ayuda');
 const cambioDireccionRouter = require('./routes/cambioDireccion');
 const cambioMedioPagoRouter = require('./routes/cambioMedioPago');
+const cambioLaboresRouter = require('./routes/cambioLabores');
 const cambioPasswordRouter = require('./routes/cambioPassword');
 const cambioPasswordSocioRouter = require('./routes/cambioPasswordSocio');
-*/
-const inicioRouter = require('./routes/inicio');
-const registerRouter = require('./routes/register');
-const registroClienteRouter = require('./routes/registroCliente');
-/*
 const loginRouter = require('./routes/login');
 const loginClienteRouter = require('./routes/loginCliente');
 const loginSocioRouter = require('./routes/loginSocio');
 const mainClienteRouter = require('./routes/mainCliente');
 const mainSocioRouter = require('./routes/mainSocio');
+
+const inicioRouter = require('./routes/inicio');
+const registerRouter = require('./routes/register');
+const registroClienteRouter = require('./routes/registroCliente');
 const politicaRouter = require('./routes/politica');
-
-
 const registroCliente2Router = require('./routes/registroCliente2');
 const registroSocioRouter = require('./routes/registroSocio');
 const solicitarServicioRouter = require('./routes/solicitarServicio');
-*/
 
 const app = express();
 
@@ -63,31 +60,30 @@ app.use('/ejecutar_query', queryRouter);
 app.use('/usuario', usuarioRouter);
 app.use('/persona',personaRouter);
 app.use('/realizarQuery',realizarQuery);
-/*
 app.use('/ajustes', ajustesRouter);
 app.use('/ajustesSocio', ajustesSocioRouter);
 app.use('/ayuda', ayudaRouter);
 app.use('/cambioDireccion', cambioDireccionRouter);
-app.use('/cambioLabores', cambioLaboresRouter);
 app.use('/cambioMedioPago', cambioMedioPagoRouter);
 app.use('/cambioPassword', cambioPasswordRouter);
 app.use('/cambioPasswordSocio', cambioPasswordSocioRouter);
-*/
+app.use('/cambioLabores', cambioLaboresRouter);
+
 app.use('/inicio', inicioRouter);
 app.use('/register', registerRouter);
 app.use('/registroCliente', registroClienteRouter);
-/*
-app.use('/login', loginRouter);
+app.use('/login', loginRouter)
 app.use('/loginCliente', loginClienteRouter);
 app.use('/loginSocio', loginSocioRouter);
 app.use('/mainCliente', mainClienteRouter);
 app.use('/mainSocio', mainSocioRouter);
 app.use('/politica', politicaRouter);
-
-
 app.use('/registroCliente2', registroCliente2Router);
 app.use('/registroSocio', registroSocioRouter);
 app.use('/solicitarServicio', solicitarServicioRouter);
+/*
+
+
 */
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
