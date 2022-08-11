@@ -27,6 +27,11 @@ html(lang='en', style='height: 100%;')
               input#apellido.form-control(type='text', style='margin-bottom: 20px;', placeholder='Ingrese su apellido')
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
+              strong Contrase&ntilde;a
+                br
+              input#password.form-control(type='password', placeholder='Ingrese su contraseña', style='margin-bottom: 20px;', onchange='changePassword();')
+            .form-group.mb-3
+              label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong Direcci&oacute;n
                 br
               input#direccion.form-control(type='text', placeholder='Ingrese su dirección', style='margin-bottom: 20px;', onchange='changePassword();')
