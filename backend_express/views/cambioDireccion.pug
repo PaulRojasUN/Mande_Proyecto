@@ -16,12 +16,13 @@ html(lang='en', style='height: 100%;')
       h1(style='color: var(--bs-blue);margin-left: 20px;margin-top: 20px;') Cambio de Direcci&oacute;n
       .row
         .col-10.col-sm-10.col-md-10.offset-1.offset-sm-1.offset-md-1.text-start.align-content-md-center
-          form(method='post')
+          form(role='form' method='post' action='http://localhost:3000/cambioDireccion')
             .form-group.mb-3
+              input#celular.form-control(type='hidden', style='margin-bottom: 20px;', name = 'celular', value=celular)
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong Nueva Direcci&oacute;n
                 br
-              input#password.form-control(type='text', placeholder='Ingrese su dirección', style='margin-bottom: 20px;', onchange='changePassword();')
+              input#direccion.form-control(type='text', placeholder='Ingrese su dirección', style='margin-bottom: 20px;', onchange='changePassword();', name='direccion')
             div
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong Cargar recibo de servicios p&uacute;blicos:
@@ -29,10 +30,8 @@ html(lang='en', style='height: 100%;')
               input.form-control(type='file')
             .row
               .col-md-6(style='margin-top: 20px;')
-                a#submitButton.btn.btn-primary.d-block.d-lg-flex.justify-content-lg-center.w-100(role='button', href='mainCliente', style='background: var(--bs-blue);') Guardar
+                button.btn.btn-primary(type="submit", name="boton", href="mainCliente", value="cambio") Guardar
               .col-md-6(style='margin-top: 20px;')
-                a.btn.btn-primary(role='button', style='color: var(--bs-blue);background: var(--bs-white);', href='ajustes')
-                  i.icon.ion-arrow-return-left(style='margin-right: 10px;')
-                  | Volver
+                button.btn.btn-primary(type="submit", name="boton", href="cambioDireccion", value="volver") Volver
     script(src='assets/bootstrap/js/bootstrap.min.js')
     script(src='assets/js/script.min.js')

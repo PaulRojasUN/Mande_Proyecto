@@ -15,32 +15,31 @@ html(lang='en', style='height: 100%;')
     .container.bg-white(style='padding-top: 10px;padding-bottom: 40px;margin-right: 12px;margin-left: 12px;padding-left: 6px;padding-right: 6px;margin-top: 12px;')
       .row
         .col-10.col-sm-10.col-md-10.offset-1.offset-sm-1.offset-md-1.text-start.align-content-md-center
-          form(method='post')
+          form(role='form' method='post' action='http://localhost:3000/cambioMedioPago')
             h1(style='color: var(--bs-blue);margin-left: 20px;margin-top: 20px;') Ingrese un nuevo medio de pago
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;color: #505E6C;')
                 strong Tarjeta de
               .form-check
-                input#formCheck-3.form-check-input(type='radio')
+                input#formCheck-3.form-check-input(type='radio', name='radioB', value="Crédito")
                 label.form-check-label(for='formCheck-3') Cr&eacute;dito
               .form-check
-                input#formCheck-1.form-check-input(type='radio')
+                input#formCheck-1.form-check-input(type='radio',  name='radioB', value="Débito")
                 label.form-check-label(for='formCheck-1') D&eacute;bito
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong N&uacute;mero de Tarjeta
-              input.form-control(type='number', style='margin-bottom: 20px;', placeholder='Ingrese el número de su tarjeta')
+              input#celular.form-control(type='hidden', style='margin-bottom: 20px;', name = 'celular', value=celular)
+              input#numero.form-control(type='number', style='margin-bottom: 20px;', placeholder='Ingrese el número de su tarjeta', name='numero')
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong C&oacute;digo de Seguridad
                 br
-              input#password.form-control(type='text', placeholder='Ingrese el código de seguridad en la tarjeta', style='margin-bottom: 20px;', onchange='changePassword();')
+              input#codigo.form-control(type='text', placeholder='Ingrese el código de seguridad en la tarjeta', style='margin-bottom: 20px;', onchange='changePassword();',  name='codigo')
             .row
               .col-md-6(style='margin-top: 20px;')
-                a#submitButton.btn.btn-primary.d-block.d-lg-flex.justify-content-lg-center.w-100(role='button', href='mainCliente', style='background: var(--bs-blue);') Guardar
+                button.btn.btn-primary(type="submit", name="boton", href="mainCliente", value="cambio") Guardar
               .col-md-6(style='margin-top: 20px;')
-                a.btn.btn-primary(role='button', style='color: var(--bs-blue);background: var(--bs-white);', href='ajustes')
-                  i.icon.ion-arrow-return-left(style='margin-right: 10px;')
-                  | Volver
+                button.btn.btn-primary(type="submit", name="boton", href="cambioMedioPago", value="volver") Volver
     script(src='assets/bootstrap/js/bootstrap.min.js')
     script(src='assets/js/script.min.js')
