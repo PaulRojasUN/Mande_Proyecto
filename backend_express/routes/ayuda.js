@@ -11,4 +11,13 @@ router.get('/', function (req, res, next)
     res.render('ayuda', { title: 'Express' });
 });
 
+router.post('/', function (req, res, next) {
+    connect(function (err, client, done) {
+        console.log("ayuda");
+        console.log(req.body);
+        res.render('mainCliente', { celular: req.body.celular});
+    });
+  
+  })
+
 module.exports = router;

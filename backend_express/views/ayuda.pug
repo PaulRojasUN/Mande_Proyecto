@@ -14,9 +14,11 @@ html(lang='en', style='height: 100%;')
   body(style='background: linear-gradient(5deg, rgb(0,103,224), rgb(0,163,255));')
     .container(style='margin-top: 12px;')
       p(style='color: var(--bs-white);') No se encuentra disponible actualmente...
-    .container
-      a.btn.btn-primary(role='button', style='color: var(--bs-blue);background: var(--bs-white);', href='mainCliente')
-        i.icon.ion-arrow-return-left(style='margin-right: 10px;')
-        | Volver
+      form(role='form' method='post' action='http://localhost:3000/ayuda')
+        .container
+        input#celular.form-control(type='hidden', style='margin-bottom: 20px;', name = 'celular', value=celular)
+        button.btn.btn-primary(type="submit",name="boton", href="mainCliente", value="volver")
+            i.icon.ion-arrow-return-left(style='margin-right: 10px;')
+            | Volver
     script(src='assets/bootstrap/js/bootstrap.min.js')
     script(src='assets/js/script.min.js')

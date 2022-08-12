@@ -16,8 +16,6 @@ router.post('/', function (req, res, next) {
       if (err) {
         return console.error('error fetching client from pool', err);
       }
-      console.log("FUNCIONOOOOOOOO");
-      console.log("Ha pasado por aquí");
       console.log(req.body);
 
       if (req.body.boton == "solicitar")
