@@ -23,7 +23,7 @@ router.post('/', function (req, res, next) {
         client.query(`SELECT celular, nombreServicio, descPagos FROM Servicio WHERE nombreServicio LIKE CONCAT('%','${req.body.filtro}','%');`, function (err, result) {
           //call `done(err)` to release the client back to the pool (or destroy it if there is an error)
           console.log(req.body.filtro);
-          console.log(result);
+          console.log(JSON.stringify(result.rows));
 
           done(err);
           if (err) {

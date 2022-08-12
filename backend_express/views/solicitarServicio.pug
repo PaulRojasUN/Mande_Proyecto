@@ -15,7 +15,7 @@ html(lang='en', style='height: 100%;')
     .container(style='background: var(--bs-white);margin-top: 30px;')
     form(role='form' method='post' action='http://localhost:3000/solicitarServicio')
       div
-        p lista
+        
         .container
           .row
             .col-md-6
@@ -24,7 +24,8 @@ html(lang='en', style='height: 100%;')
                   input(type='text', data-role='tagsinput', data-class='label-info', placeholder='Añadir filtro', style='margin-top: 8px;', name='filtro')
                 li.nav-item
                   button.btn.btn-primary(type="submit", name="boton", href="solicitarServicio",value="filtrar") Filtrar
-              div lista
+              p Resultados: #{lista}
+              div 
             .col-md-6
               h1.text-center Mapa de Resultados
               iframe(allowfullscreen='', frameborder='0', loading='lazy', src='https://www.google.com/maps/embed/v1/place?key=AIzaSyBqS_VlCbrd4cI9yBmHY_lMGlytIc1fjvY&q=Cali%2C+Colombia&zoom=11', width='100%', height='400')

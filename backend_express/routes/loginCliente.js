@@ -25,8 +25,9 @@ router.post('/', function (req, res, next) {
           //call `done(err)` to release the client back to the pool (or destroy it if there is an error)
           if ((JSON.parse(JSON.stringify(result.rows))[0]).count == '1')
           {
-            res.render('mainCliente', { title: 'Express' });
-            console.log("Ingreso");
+                res.render('mainCliente', { cel: req.body.numTelefono });
+                console.log("Ingreso");
+
           }
           else
           {

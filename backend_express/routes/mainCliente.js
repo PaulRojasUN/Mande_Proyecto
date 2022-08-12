@@ -18,8 +18,9 @@ router.post('/', function (req, res, next) {
       }
       console.log("Ha pasado por aquí");
       console.log(req.body);
-      if (req.body.boton == "iniciar")
+      if (req.body.boton == "solicitar")
       {
+        console.log("Presionoooooo")
         client.query(`SELECT * FROM Cliente WHERE celular = '${req.params.numTelefono}' AND passwordC = '${req.params.password}'`, function (err, result) {
           //call `done(err)` to release the client back to the pool (or destroy it if there is an error)
           
