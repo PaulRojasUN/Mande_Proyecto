@@ -17,33 +17,30 @@ router.post('/', function (req, res, next) {
         return console.error('error fetching client from pool', err);
       }
       console.log(req.body);
+      console.log("Cambio contraseña");
       if (req.body.boton == "cambio")
       {
-
-
-        client.query(`SELECT COUNT(*) FROM Trabajador WHERE celular = CONCAT('${req.body.numTelefono}') AND passwordT = CONCAT('${req.body.password}')`, function (err, result) {
-          //call `done(err)` to release the client back to the pool (or destroy it if there is an error)
-          if ((JSON.parse(JSON.stringify(result.rows))[0]).count == '1')
-          {
-            res.render('mainSocio', { title: 'Express' });
-            console.log("Ingreso");
-          }
-          else
-          {
-            res.render('loginSocio', { title: 'Express' });
-            console.log("Contraseña incorrecta");
-          }
-
-          done(err);
-          if (err) {
-            return console.error('error running query', err);
-          }
-          
-        });
+        if (req.body.newPW == req.body.confirmPW)
+        {
+            client.query(`UPDATE Cliente SET passwordC = '${req.body.newPW}' WHERE celular = '${req.body.celular}'`, function (err, result) {
+            //call `done(err)` to release the client back to the pool (or destroy it if there is an error)
+            done(err);
+            if (err) {
+              return console.error('error running query', err);
+            }
+            console.log("Se cambió la contraseña");
+            res.render('mainCliente', {celular: req.body.celular});
+          });
+        }
+        else
+        {
+            console.log("Las contraseñas no coinciden");
+            res.render('cambioPassword', {celular: req.body.celular});
+        }
       }
       else
       {
-        res.render('inicio', { title: 'Express' });
+        res.render('ajustes', {celular: req.body.celular});
       }
     });
   

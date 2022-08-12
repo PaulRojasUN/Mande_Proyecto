@@ -16,24 +16,25 @@ router.post('/', function (req, res, next) {
       if (err) {
         return console.error('error fetching client from pool', err);
       }
+      console.log("FUNCIONOOOOOOOO");
       console.log("Ha pasado por aquí");
       console.log(req.body);
+
       if (req.body.boton == "solicitar")
       {
-        console.log("Presionoooooo")
-        client.query(`SELECT * FROM Cliente WHERE celular = '${req.params.numTelefono}' AND passwordC = '${req.params.password}'`, function (err, result) {
-          //call `done(err)` to release the client back to the pool (or destroy it if there is an error)
-          
-          done(err);
-          if (err) {
-            return console.error('error running query', err);
-          }
-          res.render('loginCliente', { title: 'Express' });
-        });
+          res.render('solicitarServicio', {celular: req.body.celular });
       }
-      else
+      else if (req.body.boton == "ajustes")
       {
-        res.render('registroCliente', { title: 'Express' });
+        res.render('ajustes', { celular: req.body.celular});
+      }
+      else if (req.body.boton == "ayuda")
+      {
+        res.render('ayuda', { celular: req.body.celular});
+      }
+      else if (req.body.boton == "politica")
+      {
+        res.render('politica', { celular: req.body.celular});
       }
     });
   

@@ -16,7 +16,7 @@ router.post('/', function (req, res, next) {
       if (err) {
         return console.error('error fetching client from pool', err);
       }
-      console.log("El botón funciona");
+      console.log("solicitarServicio");
       console.log(req.body);
       if (req.body.boton == "filtrar")
       {
@@ -29,8 +29,12 @@ router.post('/', function (req, res, next) {
           if (err) {
             return console.error('error running query', err);
           }
-          res.render('solicitarServicio', { lista: JSON.stringify(result.rows)});
+          res.render('solicitarServicio', { lista: JSON.stringify(result.rows), celular: req.body.celular});
         });
+      }
+      else if (req.body.boton == "volver")
+      {
+        res.render('mainCliente', {celular: req.body.celular});
       }
     });
   

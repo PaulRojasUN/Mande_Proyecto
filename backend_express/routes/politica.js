@@ -11,4 +11,14 @@ router.get('/', function (req, res, next)
     res.render('politica', { title: 'Express' });
 });
 
+router.post('/', function (req, res, next) {
+    connect(function (err, client, done) {
+        console.log("Leído");
+        console.log(req.body);
+        res.render('mainCliente', { celular: req.body.celular});
+    });
+  
+  })
+
+
 module.exports = router;

@@ -18,17 +18,15 @@ html(lang='en', style='height: 100%;')
     .container.bg-white(style='padding: 39px 5px;padding-top: 40px;padding-bottom: 40px;margin-right: 12px;margin-left: 12px;padding-left: 6px;padding-right: 6px;')
       .row
         .col-10.col-sm-10.col-md-10.offset-1.offset-sm-1.offset-md-1.text-start.align-content-md-center
-          form(method='post')
+          form(role='form' method='post' action='http://localhost:3000/ajustes')
             .form-group.mb-3
-              a.btn.btn-primary(role='button', style='width: 250px;background: var(--bs-blue);', href='cambioPassword') Cambiar Contrase&ntilde;a
+              input#celular.form-control(type='hidden', style='margin-bottom: 20px;', name = 'celular', value=celular)
+              button.btn.btn-primary(type="submit", name="boton", href="cambioPassword",value="cambioP") Cambiar Contrase&ntilde;a
             .form-group.mb-3
-              a.btn.btn-primary(role='button', style='width: 250px;background: var(--bs-blue);', href='cambioDireccion') Cambiar Direcci&oacute;n
+              button.btn.btn-primary(type="submit", name="boton", href="cambioDireccion",value="cambioD") Cambiar Direcci&oacute;n
             .form-group.mb-3
-              a.btn.btn-primary(role='button', style='width: 250px;background: var(--bs-blue);', href='cambioMedioPago') Cambiar Medio de Pago
-            .row
-              .col-md-6(style='margin-top: 20px;')
-                a.btn.btn-primary(role='button', style='color: var(--bs-blue);background: var(--bs-white);', href='mainCliente')
-                  i.icon.ion-arrow-return-left(style='margin-right: 10px;')
-                  | Volver
+              button.btn.btn-primary(type="submit", name="boton", href="cambioMedioPago",value="cambioM") Cambiar Medio de Pago
+            .form-group.mb-3
+              button.btn.btn-primary(type="submit", name="boton", href="mainCliente",value="volver") Volver
     script(src='assets/bootstrap/js/bootstrap.min.js')
     script(src='assets/js/script.min.js')

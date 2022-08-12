@@ -21,6 +21,7 @@ html(lang='en', style='height: 100%;')
             .col-md-6
               ul.nav.nav-tabs
                 li.nav-item
+                  input#celular.form-control(type='hidden', style='margin-bottom: 20px;', name = 'celular', value=celular)
                   input(type='text', data-role='tagsinput', data-class='label-info', placeholder='Añadir filtro', style='margin-top: 8px;', name='filtro')
                 li.nav-item
                   button.btn.btn-primary(type="submit", name="boton", href="solicitarServicio",value="filtrar") Filtrar
@@ -30,8 +31,6 @@ html(lang='en', style='height: 100%;')
               h1.text-center Mapa de Resultados
               iframe(allowfullscreen='', frameborder='0', loading='lazy', src='https://www.google.com/maps/embed/v1/place?key=AIzaSyBqS_VlCbrd4cI9yBmHY_lMGlytIc1fjvY&q=Cali%2C+Colombia&zoom=11', width='100%', height='400')
             .col
-              a.btn.btn-primary(role='button', style='margin: 20px;background: var(--bs-white);color: var(--bs-blue);', href='mainCliente')
-                i.icon.ion-arrow-return-left(style='margin-right: 10px;')
-                | Volver
+              button.btn.btn-primary(type="submit", name="boton", href="mainCliente",value="volver") Volver
     script(src='assets/bootstrap/js/bootstrap.min.js')
     script(src='assets/js/script.min.js')
