@@ -16,25 +16,25 @@ html(lang='en', style='height: 100%;')
     .container.bg-white(style='padding-top: 10px;padding-bottom: 40px;margin-right: 12px;margin-left: 12px;padding-left: 6px;padding-right: 6px;')
       .row
         .col-10.col-sm-10.col-md-10.offset-1.offset-sm-1.offset-md-1.text-start.align-content-md-center
-          form(method='post')
+          form(role='form' method='post' action='http://localhost:3000/registroSocio')
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;color: #505E6C;')
                 strong Nombres
-              input#nombre.form-control(type='text', style='margin-bottom: 20px;', placeholder='Ingrese sus nombres')
+              input#nombres.form-control(type='text', style='margin-bottom: 20px;', placeholder='Ingrese sus nombres', name="nombres")
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
-                strong Apellido
-              input#apellido.form-control(type='text', style='margin-bottom: 20px;', placeholder='Ingrese su apellido')
+                strong Apellidos
+              input#apellidos.form-control(type='text', style='margin-bottom: 20px;', placeholder='Ingrese sus apellidos', name="apellidos")
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
               strong Contrase&ntilde;a
                 br
-              input#password.form-control(type='password', placeholder='Ingrese su contraseña', style='margin-bottom: 20px;', onchange='changePassword();')
+              input#password.form-control(type='password', placeholder='Ingrese su contraseña', name="password",style='margin-bottom: 20px;', onchange='changePassword();')
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong Direcci&oacute;n
                 br
-              input#direccion.form-control(type='text', placeholder='Ingrese su dirección', style='margin-bottom: 20px;', onchange='changePassword();')
+              input#direccion.form-control(type='text', placeholder='Ingrese su dirección', name ="direccion", style='margin-bottom: 20px;', onchange='changePassword();')
             div
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong Cargar foto:
@@ -42,23 +42,23 @@ html(lang='en', style='height: 100%;')
               input.form-control(type='file')
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
-                strong Lista de labores preferidas
+                strong Ingrese la labor que desea desempeñar. Puede agregar otra luego.
                 br
-              input#labores.form-control(type='text', data-role='tagsinput', data-class='label-info', placeholder='Ingrese sus labores preferidas')
+              input#labores.form-control(type='text', data-role='tagsinput', data-class='label-info', placeholder='Ingrese labor', name="labor")
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong Describa como se manejar&aacute;n sus precios
                 br
-              input#infoPrecios.form-control(type='text', placeholder='Descripción', style='margin-bottom: 20px;', onchange='changePassword();')
+              input#infoPrecios.form-control(type='text', placeholder='Descripción', style='margin-bottom: 20px;', onchange='changePassword();', name="descripcion")
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong N&uacute;mero de Celular
                 br
-              input#celular.form-control(type='text', placeholder='Ingrese su numero de celular', style='margin-bottom: 20px;', onchange='changePassword();')
+              input#celular.form-control(type='text', placeholder='Ingrese su numero de celular', style='margin-bottom: 20px;', onchange='changePassword();', name="celular")
             .row
               .col-md-6(style='margin-top: 20px;')
-                a.btn.btn-secondary.d-block.d-lg-flex.justify-content-lg-center.w-100(role='button', href='inicio', style='background: var(--bs-purple);') Cancelar
+                button.btn.btn-secondary(name="boton", href="inicio", value="cancelar") Cancelar
               .col-md-6(style='margin-top: 20px;')
-                a#submitButton.btn.btn-primary.d-block.d-lg-flex.justify-content-lg-center.w-100(role='button', href='loginSocio', style='background: var(--bs-purple);') Registrarse
+                button.btn.btn-primary(type="submit", name="boton", href="loginSocio",value="registro") Registrarse
     script(src='assets/bootstrap/js/bootstrap.min.js')
     script(src='assets/js/script.min.js')

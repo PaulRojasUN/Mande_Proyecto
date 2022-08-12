@@ -27,9 +27,7 @@ html(lang='en', style='height: 100%;')
                 input.form-check-input(type='radio', name='radioB', value="Débito")
                 label.form-check-label(for='formCheck-1') D&eacute;bito
             .form-group.mb-3
-              label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
-                strong Celular
-              input#celular.form-control(type='number', style='margin-bottom: 20px;', name = 'celular', value=cel disabled)
+              input#celular.form-control(type='hidden', style='margin-bottom: 20px;', name = 'celular', value=cel)
             .form-group.mb-3
               label.form-label(style='margin-bottom: 10px;margin-top: 10px;color: #505E6C;')
                 strong N&uacute;mero de Tarjeta

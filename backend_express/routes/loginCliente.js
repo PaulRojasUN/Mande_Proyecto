@@ -16,23 +16,34 @@ router.post('/', function (req, res, next) {
       if (err) {
         return console.error('error fetching client from pool', err);
       }
-      console.log("Ha pasado por aquí");
       console.log(req.body);
-      if (req.body.boton == "registro")
+      if (req.body.boton == "iniciar")
       {
-        client.query(`INSERT INTO Tarjeta VALUES ('${req.body.radioB}', '${req.body.numero}', '${req.body.codigo}', '${req.body.celular}');`, function (err, result) {
+
+
+        client.query(`SELECT COUNT(*) FROM Cliente WHERE celular = CONCAT('${req.body.numTelefono}') AND passwordC = CONCAT('${req.body.password}')`, function (err, result) {
           //call `done(err)` to release the client back to the pool (or destroy it if there is an error)
-          
+          if ((JSON.parse(JSON.stringify(result.rows))[0]).count == '1')
+          {
+            res.render('mainCliente', { title: 'Express' });
+            console.log("Ingreso");
+          }
+          else
+          {
+            res.render('loginCliente', { title: 'Express' });
+            console.log("Contraseña incorrecta");
+          }
+
           done(err);
           if (err) {
             return console.error('error running query', err);
           }
-          res.render('loginCliente', { title: 'Express' });
+          
         });
       }
       else
       {
-        res.render('registroCliente', { title: 'Express' });
+        res.render('inicio', { title: 'Express' });
       }
     });
   
