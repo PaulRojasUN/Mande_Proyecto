@@ -1,3 +1,5 @@
+LINK DEL VIDEO EN YOUTUBE: https://youtu.be/RlKzX15FRPk
+
 # Para Windows 10: 
 - En la consola PowerShell, ubicarse en la carpeta database_postgres y ejecutar:
 
